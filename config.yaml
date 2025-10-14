@@ -1,0 +1,25 @@
+app:
+  name : "WebApp"
+  mode : "Dev"
+  port : 8088
+
+log:
+    level : "debug"
+    filename : "WebApp.log"
+    max_size : 500
+    max_backups : 5
+    max_age : 30
+
+mysql:
+  host: "127.0.0.1"
+  port: 13306
+  user: "root"
+  password: "zheshimima"
+  dbname: "webapp"
+
+redis:
+  host: "127.0.0.1"
+  port: 16379
+  db : 0
+  password : ""
+  pool_size : 100
