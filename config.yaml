@@ -1,7 +1,7 @@
 app:
   name : "WebApp"
   mode : "Dev"
-  port : 8088
+  port : 8080
 
 log:
     level : "debug"
