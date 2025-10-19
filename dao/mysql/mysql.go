@@ -1,22 +1,22 @@
 package mysql
 
 import (
+	"WebApp/settings"
 	"database/sql"
 	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/spf13/viper"
 )
 
 var db *sql.DB
 
-func Init() (err error) {
+func Init(cfg *settings.MySQLConfig) (err error) {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8",
-		viper.GetString("mysql.user"),
-		viper.GetString("mysql.password"),
-		viper.GetString("mysql.host"),
-		viper.GetInt("mysql.port"),
-		viper.GetString("mysql.dbname"),
+		cfg.User,
+		cfg.Password,
+		cfg.Host,
+		cfg.Port,
+		cfg.DbName,
 	)
 	db, err = sql.Open("mysql", dsn)
 	if err != nil {
